@@ -30,7 +30,7 @@ public class PointDTOTest {
         ObjectMapper mapper=new ObjectMapper();
         PointDTO dto=mapper.readValue(expected, PointDTO.class);
         assertEquals(autoId, dto.getAutoId());
-        assertEquals(1498200310221L, dto.getTime());
+        assertEquals(1498200310221L, dto.getTime() );
     }
 
 }

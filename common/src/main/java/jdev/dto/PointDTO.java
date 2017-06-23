@@ -1,5 +1,8 @@
 package jdev.dto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * Created by Pavilion on 21.06.2017.
  */
@@ -37,12 +40,9 @@ public class PointDTO {
         return time;
     }
 
-    public String toJson() {
-        return "PointDTO(" +
-                "lat=" + lat +
-                " lon=" + lon +
-                " autoID"+autoId + '\'' +
-                ")";
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
     }
 
     @Override
@@ -57,5 +57,6 @@ public class PointDTO {
     public void setTime(long time) {
         this.time = time;
     }
+
 
 }
